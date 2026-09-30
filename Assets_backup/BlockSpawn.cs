@@ -15,7 +15,6 @@ public class BlockSpawn : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        spawnBlock();
     }
 
     // Update is called once per frame
@@ -30,7 +29,6 @@ public class BlockSpawn : MonoBehaviour
             spawnBlock();
             timer = 0; // reset timer
         }
-        
     }
 
     // function to spawn blocks
@@ -49,7 +47,7 @@ public class BlockSpawn : MonoBehaviour
         {
             Instantiate(block, new Vector3(transform.position.x, y, 0), transform.rotation);
         } 
-        else if(blockNum <= 0.66 && blockNum > 0.33)
+        else if(blockNum > 0.33 && blockNum <= 0.66)
         {
             Instantiate(largeBlock, new Vector3(transform.position.x, y, 0), transform.rotation);
         }
